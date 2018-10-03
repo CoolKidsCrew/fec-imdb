@@ -1,0 +1,7 @@
+.DS_Store
+bundle.js
+package-lock.json 
+node_modules
+coverage
+config.js
+data.csv

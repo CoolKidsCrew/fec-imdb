@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb://mongo:27017/test",
+  // "mongodb://mongo:27017/test",
+  "mongodb://mongo:27017/fmdb", //renamed db from test
   { useNewUrlParser: true }
 );
 
