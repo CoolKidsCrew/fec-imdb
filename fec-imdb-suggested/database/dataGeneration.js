@@ -25,14 +25,22 @@ function generateData() {
       if (counter % 100000 === 0) console.log(counter); 
       if(counter === 10000000) {
         //last write
+
+        //CSV//
         // stream.write(counter + ',' + faker.random.word() + ',' + Math.floor(Math.random()*(2020 - 1920)+1920) + ',' + `https://picsum.photos/182/268/?image=${Math.floor(Math.random()*1000)}` + '\n', 'utf-8' ,()=> {
+        
+        //TSV//        
         stream.write(counter + '\t' + faker.random.word() + '\t' + Math.floor(Math.random()*(2020 - 1920)+1920) + '\t' + `https://picsum.photos/182/268/?image=${Math.floor(Math.random()*1000)}` + '\n', 'utf-8' ,()=> {
         stream.end();
         });
       } else {
         // see if we should continue, or wait
         // don't pass the callback, because we're not done yet.
+
+        //CSV//
         // flag = stream.write(counter + ',' + faker.random.word() + ',' + Math.floor(Math.random()*(2020 - 1920)+1920) + ',' + `https://picsum.photos/182/268/?image=${Math.floor(Math.random()*1000)}` + '\n', 'utf-8');
+        
+        //TSV//
         flag = stream.write(counter + '\t' + faker.random.word() + '\t' + Math.floor(Math.random()*(2020 - 1920)+1920) + '\t' + `https://picsum.photos/182/268/?image=${Math.floor(Math.random()*1000)}` + '\n', 'utf-8');
       }
     } while (counter < 10000000 && flag);
@@ -51,7 +59,7 @@ function generateData() {
   //handle async for RAM crowding. 
   //especially for T2 micro
 generateData();
-// use csv-parser!
 
 
-// mongoimport --host localhost:27017 -d fakertest -c info --type csv --file C:\Users\panic\Documents\HRLA24\test\fakertest\db\data.csv --headerline --mode insert --quiet
+// mongoimport --host localhost:27017 -d fmdb -c Movies --type csv --file dir\data.csv --headerline --mode insert
+// \copy Movies from 'dir\data.tsv' DELIMITER E'\t'
