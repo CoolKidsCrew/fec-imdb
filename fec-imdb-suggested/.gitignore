@@ -5,3 +5,10 @@ node_modules
 coverage
 config.js
 data.csv
+smallset.
+data.tsv
+data.json
+bundleSuggested.js
+static/bundleSuggested.js
+database/mongo
+mongo

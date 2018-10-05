@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 let movieSchema = new mongoose.Schema({
-  id: { type: String, unique: true },
+  id: { type: Number, unique: true },
   Title: String,
-  Tear: String,
+  Year: String,
   Poster: String
 });
 
-let Movie = mongoose.model("Movie", movieSchema);
+let Movie = mongoose.model("movies", movieSchema, "movies");
 
 module.exports.Movie = Movie;
