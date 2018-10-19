@@ -10,3 +10,7 @@ let movieSchema = new mongoose.Schema({
 let Movie = mongoose.model("movies", movieSchema, "movies");
 
 module.exports.Movie = Movie;
+
+//////////////////
+//MONGO NATIVE///
+////////////////
